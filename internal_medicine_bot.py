@@ -1,5 +1,6 @@
 import logging
-from telegram.ext import Update, Updater, CommandHandler, CallbackContext, CallbackQueryHandler, MessageHandler, filters
+from telegram.ext import Updater, CommandHandler, CallbackContext, CallbackQueryHandler, MessageHandler, Filters
+
 
 # Define the token for your bot (replace 'YOUR_BOT_TOKEN' with the actual token)
 TOKEN = "7151579267:AAEhwzmDNiv1FWCemKm7gHUhB4nWV4zhRpQ"
@@ -42,7 +43,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Define the start command handler
-def start(update: Update, context: CallbackContext) -> None:
+def start(update, context):
     """Send a message when the command /start is issued."""
     keyboard = [
         [InlineKeyboardButton(option, callback_data=option)] for option in MAIN_MENU_OPTIONS
