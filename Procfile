@@ -1,1 +1,1 @@
-worker: python obsgyn_bot.py 
+web: python internal_medicine_bot.py
